@@ -111,9 +111,16 @@ func set_word_with_challenge(word: String, displayed: String, challenge: int):
 	if word_label:
 		word_label.text = displayed
 		word_label.visible = true
-		# Color code challenged words
-		if challenge > 0:
-			word_label.modulate = Color(1.0, 0.8, 0.3, 1)  # Yellow/orange for challenged
+		# Color code by challenge type
+		match challenge:
+			1:  # SCRAMBLED
+				word_label.modulate = Color(1.0, 0.8, 0.3, 1)  # Yellow/orange
+			2:  # BACKWARDS
+				word_label.modulate = Color(1.0, 0.5, 0.8, 1)  # Pink
+			3:  # MISSING_VOWELS
+				word_label.modulate = Color(0.5, 0.8, 1.0, 1)  # Light blue
+			_:
+				word_label.modulate = Color.WHITE
 
 func clear_word():
 	current_word = ""

@@ -187,7 +187,7 @@ func get_random_challenge(difficulty: int, floor_num: int) -> ChallengeType:
 		if floor_num < 10:
 			return ChallengeType.NORMAL
 		elif randf() < 0.3:  # 30% chance
-			var challenges = [ChallengeType.SCRAMBLED, ChallengeType.BACKWARDS]
+			var challenges = [ChallengeType.BACKWARDS, ChallengeType.MISSING_VOWELS]
 			return challenges[randi() % challenges.size()]
 		else:
 			return ChallengeType.NORMAL
@@ -195,7 +195,7 @@ func get_random_challenge(difficulty: int, floor_num: int) -> ChallengeType:
 		if floor_num < 5:
 			return ChallengeType.NORMAL
 		elif randf() < 0.5:  # 50% chance
-			var challenges = [ChallengeType.SCRAMBLED, ChallengeType.BACKWARDS, ChallengeType.MISSING_VOWELS]
+			var challenges = [ChallengeType.BACKWARDS, ChallengeType.MISSING_VOWELS]
 			return challenges[randi() % challenges.size()]
 		else:
 			return ChallengeType.NORMAL

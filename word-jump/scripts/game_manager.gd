@@ -21,6 +21,10 @@ var lives: int = 5
 var current_floor: int = 1
 var time_remaining: float = 60.0
 
+# Combo reward tracking
+var combo_5_rewarded: bool = false
+var combo_20_rewarded: bool = false
+
 # Scoring constants
 const BASE_POINTS_PER_CHAR: int = 10
 const SPEED_BONUS_MULTIPLIER: float = 2.0
@@ -49,6 +53,8 @@ func start_game():
 	lives = DIFFICULTY_LIVES[current_difficulty]
 	current_floor = 1
 	time_remaining = 60.0
+	combo_5_rewarded = false
+	combo_20_rewarded = false
 	current_state = GameState.PLAYING
 	emit_signal("game_started")
 	emit_signal("score_changed", score)
@@ -100,8 +106,22 @@ func increment_combo():
 		max_combo = combo
 	emit_signal("combo_changed", combo)
 
+	# Combo rewards
+	if combo >= 5 and not combo_5_rewarded:
+		combo_5_rewarded = true
+		gain_life(1)
+	if combo >= 20 and not combo_20_rewarded:
+		combo_20_rewarded = true
+		gain_life(2)
+
+func gain_life(amount: int):
+	lives += amount
+	emit_signal("lives_changed", lives)
+
 func reset_combo():
 	combo = 0
+	combo_5_rewarded = false
+	combo_20_rewarded = false
 	emit_signal("combo_changed", combo)
 
 func lose_life():

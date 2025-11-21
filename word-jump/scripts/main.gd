@@ -47,6 +47,11 @@ func _ready():
 	if restart_btn:
 		restart_btn.pressed.connect(_on_restart_pressed)
 
+	# Connect main menu button
+	var menu_btn = hud.get_node_or_null("GameOverPanel/VBoxContainer/MainMenuButton")
+	if menu_btn:
+		menu_btn.pressed.connect(_on_main_menu_pressed)
+
 	# Connect pause button from HUD
 	hud.pause_requested.connect(_on_pause_requested)
 
@@ -232,3 +237,6 @@ func _on_game_started():
 
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

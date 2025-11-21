@@ -138,18 +138,19 @@ layout_mode = 2
 [node name="InstructionsLabel" type="Label" parent="HowToPlayPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "• Type the word on a platform to jump to it
+text = "• Type the word to jump to the next platform
 
-• Green platforms are within reach
+• Keep up with the auto-scroll or lose a life!
 
-• Farther jumps = more points + time bonus
+• Build combos for bonus points
+  - 5 combo = +1 life
+  - 20 combo = +2 lives
 
-• The screen auto-scrolls upward
-  Don't fall behind!
+• Word Challenges (Medium/Hard):
+  - Pink text = type it backwards
+  - Blue text = fill in missing vowels
 
-• Typos cost a life - type carefully!
-
-• Press ESC or || button to pause"
+• Press ESC to pause"
 autowrap_mode = 2
 
 [node name="Spacer2" type="Control" parent="HowToPlayPanel/VBoxContainer"]

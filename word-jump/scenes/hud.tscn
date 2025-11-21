@@ -123,6 +123,10 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Restart"
 
+[node name="MainMenuButton" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
 [node name="DangerZone" type="ColorRect" parent="."]
 anchors_preset = 12
 anchor_top = 1.0
