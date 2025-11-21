@@ -3,4 +3,4 @@
 
 # Development documentation (local only)
 *.md
-!word-jump/README.md
+!README.md
