@@ -56,4 +56,4 @@ func _on_back_pressed():
 	how_to_play_panel.visible = false
 
 func _on_quit_pressed():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/overworld.tscn")

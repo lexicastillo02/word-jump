@@ -43,9 +43,9 @@ func _ready():
 	original_position = position
 	start_x = position.x
 
-	# Set up collision shape size
+	# Set up collision shape size (32px height prevents tunneling at high speeds)
 	if collision and collision.shape is RectangleShape2D:
-		collision.shape.size = Vector2(platform_width, 16)
+		collision.shape.size = Vector2(platform_width, 32)
 
 func _process(delta):
 	match platform_type:
