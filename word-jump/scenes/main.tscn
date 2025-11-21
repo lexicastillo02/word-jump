@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://main123"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://player123" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="3_camera"]
+[ext_resource type="Script" path="res://scripts/platform_spawner.gd" id="4_spawner"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="5_game"]
+[ext_resource type="Script" path="res://scripts/word_manager.gd" id="6_word"]
+[ext_resource type="PackedScene" uid="uid://hud123" path="res://scenes/hud.tscn" id="7_hud"]
+[ext_resource type="PackedScene" uid="uid://pause123" path="res://scenes/pause_menu.tscn" id="8_pause"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="BackgroundColor" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -1000.0
+offset_top = -5000.0
+offset_right = 2000.0
+offset_bottom = 2000.0
+color = Color(0.1, 0.1, 0.2, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(360, 1000)
+script = ExtResource("3_camera")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(360, 1068)
+
+[node name="PlatformSpawner" type="Node2D" parent="."]
+script = ExtResource("4_spawner")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_game")
+
+[node name="WordManager" type="Node" parent="."]
+script = ExtResource("6_word")
+
+[node name="HUD" parent="." instance=ExtResource("7_hud")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_pause")]
