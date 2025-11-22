@@ -56,4 +56,8 @@ func _on_back_pressed():
 	how_to_play_panel.visible = false
 
 func _on_quit_pressed():
-	get_tree().change_scene_to_file("res://scenes/overworld.tscn")
+	# Return to where player came from
+	if GameSettings.desktop_source == "apartment":
+		get_tree().change_scene_to_file("res://scenes/desktop.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/work_hub.tscn")

@@ -58,9 +58,10 @@ func _process(delta):
 
 func process_shaky(delta):
 	if is_collapsing:
-		# Shake effect
+		# Shake effect - only horizontal to prevent player falling through
 		position.x = original_position.x + randf_range(-shake_intensity, shake_intensity)
-		position.y = original_position.y + randf_range(-shake_intensity, shake_intensity)
+		# Keep Y stable so player doesn't lose floor contact
+		position.y = original_position.y
 
 func process_timed(delta):
 	if is_collapsing:

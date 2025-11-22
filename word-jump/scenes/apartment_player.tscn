@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://overworld_player"]
 
-[ext_resource type="Script" path="res://scripts/overworld/overworld_player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/overworld/apartment_player.gd" id="1_player"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(24, 24)

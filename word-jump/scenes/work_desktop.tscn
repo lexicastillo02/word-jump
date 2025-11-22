@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn7xv7avvmutx"]
+[gd_scene load_steps=2 format=3 uid="uid://work_desktop_scene"]
 
-[ext_resource type="Script" uid="uid://cmcp3qr65wrok" path="res://scripts/overworld/desktop.gd" id="1_desktop"]
+[ext_resource type="Script" path="res://scripts/work/work_desktop.gd" id="1_work_desktop"]
 
-[node name="Desktop" type="Control"]
+[node name="WorkDesktop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_desktop")
+script = ExtResource("1_work_desktop")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.5, 0.5, 1)
+color = Color(0.0, 0.3, 0.6, 1)
 
 [node name="Taskbar" type="ColorRect" parent="."]
 layout_mode = 1
@@ -63,7 +63,7 @@ offset_bottom = 10.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 12
-text = "11:59 PM"
+text = "9:00 AM"
 horizontal_alignment = 2
 vertical_alignment = 1
 
@@ -102,7 +102,7 @@ offset_top = 2.0
 offset_right = 24.0
 offset_bottom = 178.0
 mouse_filter = 2
-color = Color(0.5, 0.5, 0.5, 1)
+color = Color(0.3, 0.3, 0.5, 1)
 
 [node name="SideText" type="Label" parent="StartMenu/SideBar"]
 layout_mode = 1
@@ -118,9 +118,10 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
 rotation = -1.5708
+mouse_filter = 2
 theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
 theme_override_font_sizes/font_size = 10
-text = "HomeOS 95"
+text = "WorkOS 95"
 vertical_alignment = 1
 
 [node name="LogOffButton" type="Button" parent="StartMenu"]
@@ -192,6 +193,7 @@ offset_right = 30.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12

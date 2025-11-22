@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Word Jump"
-run/main_scene="res://scenes/overworld.tscn"
+run/main_scene="res://scenes/title_screen.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameSettings="*res://scripts/core/game_settings.gd"
+InteractionManager="*res://scripts/core/interaction_manager.gd"
+SaveManager="*res://scripts/core/save_manager.gd"
 
 [display]
 

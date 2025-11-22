@@ -97,14 +97,14 @@ func _on_start_pressed() -> void:
 	start_menu.visible = is_start_menu_open
 
 func _on_log_off_pressed() -> void:
-	# Close menu and return to apartment
+	# Close menu and return to work hub
 	is_start_menu_open = false
 	start_menu.visible = false
-	_return_to_apartment()
+	_return_to_work_hub()
 
 func _launch_climb() -> void:
-	# Track that we came from apartment
-	GameSettings.desktop_source = "apartment"
+	# Track that we came from work
+	GameSettings.desktop_source = "work"
 
 	# Show boot sequence
 	boot_overlay.visible = true
@@ -123,7 +123,7 @@ func _launch_climb() -> void:
 func _change_to_game() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
-func _return_to_apartment() -> void:
+func _return_to_work_hub() -> void:
 	var tween := create_tween()
 
 	# Create fade overlay
@@ -134,4 +134,4 @@ func _return_to_apartment() -> void:
 	add_child(fade)
 
 	tween.tween_property(fade, "color:a", 1.0, 0.3)
-	tween.tween_callback(func(): get_tree().change_scene_to_file("res://scenes/apartment.tscn"))
+	tween.tween_callback(func(): get_tree().change_scene_to_file("res://scenes/work_hub.tscn"))
