@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 # Movement constants
 const GRAVITY: float = 1200.0
+const MAX_FALL_VELOCITY: float = 800.0  # Cap fall speed to prevent tunneling
 
 # State
 var is_jumping: bool = false
@@ -23,6 +24,9 @@ func _physics_process(delta):
 	# Apply gravity
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+		# Cap fall velocity to prevent tunneling through platforms
+		if velocity.y > MAX_FALL_VELOCITY:
+			velocity.y = MAX_FALL_VELOCITY
 	else:
 		# Only count as landed if we were falling (not just starting a jump)
 		if is_jumping and velocity.y >= 0:

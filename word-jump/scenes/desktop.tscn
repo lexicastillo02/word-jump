@@ -1,0 +1,261 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn7xv7avvmutx"]
+
+[ext_resource type="Script" uid="uid://cmcp3qr65wrok" path="res://scripts/overworld/desktop.gd" id="1_desktop"]
+
+[node name="Desktop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_desktop")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.5, 0.5, 1)
+
+[node name="Taskbar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+color = Color(0.75, 0.75, 0.75, 1)
+
+[node name="TaskbarBorder" type="ColorRect" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="StartButton" type="Button" parent="Taskbar"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 80.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 12
+text = "Start"
+
+[node name="Clock" type="Label" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -10.0
+offset_right = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "11:59 PM"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="StartMenu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 4.0
+offset_top = 500.0
+offset_right = 160.0
+offset_bottom = 680.0
+mouse_filter = 1
+
+[node name="MenuBorder" type="ColorRect" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.75, 0.75, 0.75, 1)
+
+[node name="MenuInner" type="ColorRect" parent="StartMenu"]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 154.0
+offset_bottom = 178.0
+mouse_filter = 2
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="SideBar" type="ColorRect" parent="StartMenu"]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 178.0
+mouse_filter = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="SideText" type="Label" parent="StartMenu/SideBar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -12.0
+offset_right = 80.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -1.5708
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 10
+text = "HomeOS 95"
+vertical_alignment = 1
+
+[node name="LogOffButton" type="Button" parent="StartMenu"]
+layout_mode = 1
+offset_left = 26.0
+offset_top = 140.0
+offset_right = 152.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 11
+text = "Log Off..."
+
+[node name="Separator" type="ColorRect" parent="StartMenu"]
+layout_mode = 1
+offset_left = 26.0
+offset_top = 132.0
+offset_right = 152.0
+offset_bottom = 134.0
+mouse_filter = 2
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="DesktopIcons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ClimbIcon" type="Button" parent="DesktopIcons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 110.0
+focus_mode = 0
+flat = true
+
+[node name="IconImage" type="ColorRect" parent="DesktopIcons/ClimbIcon"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 5.0
+offset_right = 24.0
+offset_bottom = 53.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(1, 0.8, 0.2, 1)
+
+[node name="FolderTab" type="ColorRect" parent="DesktopIcons/ClimbIcon/IconImage"]
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 8.0
+mouse_filter = 2
+color = Color(0.9, 0.7, 0.1, 1)
+
+[node name="IconLabel" type="Label" parent="DesktopIcons/ClimbIcon"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -28.0
+offset_right = 30.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "CLIMB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectionHighlight" type="ColorRect" parent="DesktopIcons/ClimbIcon"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0.5, 0.5)
+
+[node name="BootOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BootText" type="Label" parent="BootOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -40.0
+offset_right = 200.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3, 0.8, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "Loading CLIMB.exe..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CRTEffect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.1)
+
+[node name="Scanlines" type="ColorRect" parent="CRTEffect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.05)

@@ -1,0 +1,328 @@
+[gd_scene load_steps=13 format=3 uid="uid://bedroom_overworld"]
+
+[ext_resource type="Script" path="res://scripts/overworld/apartment.gd" id="1_overworld"]
+[ext_resource type="PackedScene" path="res://scenes/apartment_player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/apartment_pause_menu.tscn" id="3_pause"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
+size = Vector2(1080, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_left"]
+size = Vector2(100, 520)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_right"]
+size = Vector2(100, 520)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bottom"]
+size = Vector2(1280, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bed"]
+size = Vector2(200, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_desk"]
+size = Vector2(250, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wardrobe"]
+size = Vector2(110, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_computer_zone"]
+size = Vector2(100, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_interact"]
+size = Vector2(80, 60)
+
+[node name="Overworld" type="Node2D"]
+script = ExtResource("1_overworld")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.15, 0.12, 0.18, 1)
+
+[node name="Floor" type="ColorRect" parent="."]
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 1180.0
+offset_bottom = 620.0
+color = Color(0.25, 0.2, 0.15, 1)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="TopWall" type="ColorRect" parent="Walls"]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 1180.0
+offset_bottom = 200.0
+color = Color(0.3, 0.25, 0.35, 1)
+
+[node name="LeftWall" type="ColorRect" parent="Walls"]
+offset_left = 0.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 620.0
+color = Color(0.3, 0.25, 0.35, 1)
+
+[node name="RightWall" type="ColorRect" parent="Walls"]
+offset_left = 1180.0
+offset_top = 100.0
+offset_right = 1280.0
+offset_bottom = 620.0
+color = Color(0.3, 0.25, 0.35, 1)
+
+[node name="BottomWall" type="ColorRect" parent="Walls"]
+offset_left = 0.0
+offset_top = 620.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.3, 0.25, 0.35, 1)
+
+[node name="Furniture" type="Node2D" parent="."]
+
+[node name="Window" type="ColorRect" parent="Furniture"]
+offset_left = 150.0
+offset_top = 110.0
+offset_right = 350.0
+offset_bottom = 190.0
+color = Color(0.4, 0.6, 0.8, 1)
+
+[node name="Bed" type="ColorRect" parent="Furniture"]
+offset_left = 120.0
+offset_top = 280.0
+offset_right = 320.0
+offset_bottom = 450.0
+color = Color(0.6, 0.3, 0.3, 1)
+
+[node name="Rug" type="ColorRect" parent="Furniture"]
+offset_left = 400.0
+offset_top = 380.0
+offset_right = 700.0
+offset_bottom = 520.0
+color = Color(0.5, 0.35, 0.25, 1)
+
+[node name="Desk" type="ColorRect" parent="Furniture"]
+offset_left = 900.0
+offset_top = 220.0
+offset_right = 1150.0
+offset_bottom = 320.0
+color = Color(0.4, 0.3, 0.2, 1)
+
+[node name="Computer" type="ColorRect" parent="Furniture/Desk"]
+offset_left = 80.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 80.0
+color = Color(0.2, 0.2, 0.25, 1)
+
+[node name="Screen" type="ColorRect" parent="Furniture/Desk/Computer"]
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 55.0
+color = Color(0.3, 0.8, 0.5, 1)
+
+[node name="Chair" type="ColorRect" parent="Furniture"]
+offset_left = 980.0
+offset_top = 340.0
+offset_right = 1060.0
+offset_bottom = 420.0
+color = Color(0.35, 0.25, 0.2, 1)
+
+[node name="Bookshelf" type="ColorRect" parent="Furniture"]
+offset_left = 600.0
+offset_top = 120.0
+offset_right = 750.0
+offset_bottom = 190.0
+color = Color(0.45, 0.35, 0.25, 1)
+
+[node name="Wardrobe" type="ColorRect" parent="Furniture"]
+offset_left = 1050.0
+offset_top = 450.0
+offset_right = 1160.0
+offset_bottom = 600.0
+color = Color(0.5, 0.4, 0.3, 1)
+
+[node name="Plant" type="ColorRect" parent="Furniture"]
+offset_left = 500.0
+offset_top = 530.0
+offset_right = 560.0
+offset_bottom = 600.0
+color = Color(0.3, 0.6, 0.3, 1)
+
+[node name="Poster" type="ColorRect" parent="Furniture"]
+offset_left = 450.0
+offset_top = 120.0
+offset_right = 530.0
+offset_bottom = 180.0
+color = Color(0.8, 0.4, 0.6, 1)
+
+[node name="Door" type="ColorRect" parent="Furniture"]
+offset_left = 580.0
+offset_top = 620.0
+offset_right = 700.0
+offset_bottom = 720.0
+color = Color(0.4, 0.3, 0.25, 1)
+
+[node name="DoorHandle" type="ColorRect" parent="Furniture/Door"]
+offset_left = 90.0
+offset_top = 50.0
+offset_right = 110.0
+offset_bottom = 70.0
+color = Color(0.7, 0.6, 0.3, 1)
+
+[node name="TV" type="ColorRect" parent="Furniture"]
+offset_left = 120.0
+offset_top = 480.0
+offset_right = 200.0
+offset_bottom = 560.0
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="TVScreen" type="ColorRect" parent="Furniture/TV"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 75.0
+offset_bottom = 55.0
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="Headset" type="ColorRect" parent="Furniture/Desk"]
+offset_left = 10.0
+offset_top = 30.0
+offset_right = 60.0
+offset_bottom = 70.0
+color = Color(0.3, 0.3, 0.35, 1)
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="TopWallBody" type="StaticBody2D" parent="Collisions"]
+
+[node name="TopWallCollision" type="CollisionShape2D" parent="Collisions/TopWallBody"]
+position = Vector2(640, 150)
+shape = SubResource("RectangleShape2D_top")
+
+[node name="LeftWallBody" type="StaticBody2D" parent="Collisions"]
+
+[node name="LeftWallCollision" type="CollisionShape2D" parent="Collisions/LeftWallBody"]
+position = Vector2(50, 360)
+shape = SubResource("RectangleShape2D_left")
+
+[node name="RightWallBody" type="StaticBody2D" parent="Collisions"]
+
+[node name="RightWallCollision" type="CollisionShape2D" parent="Collisions/RightWallBody"]
+position = Vector2(1230, 360)
+shape = SubResource("RectangleShape2D_right")
+
+[node name="BottomWallBody" type="StaticBody2D" parent="Collisions"]
+
+[node name="BottomWallCollision" type="CollisionShape2D" parent="Collisions/BottomWallBody"]
+position = Vector2(640, 670)
+shape = SubResource("RectangleShape2D_bottom")
+
+[node name="BedBody" type="StaticBody2D" parent="Collisions"]
+
+[node name="BedCollision" type="CollisionShape2D" parent="Collisions/BedBody"]
+position = Vector2(220, 365)
+shape = SubResource("RectangleShape2D_bed")
+
+[node name="DeskBody" type="StaticBody2D" parent="Collisions"]
+
+[node name="DeskCollision" type="CollisionShape2D" parent="Collisions/DeskBody"]
+position = Vector2(1025, 270)
+shape = SubResource("RectangleShape2D_desk")
+
+[node name="WardrobeBody" type="StaticBody2D" parent="Collisions"]
+
+[node name="WardrobeCollision" type="CollisionShape2D" parent="Collisions/WardrobeBody"]
+position = Vector2(1105, 525)
+shape = SubResource("RectangleShape2D_wardrobe")
+
+[node name="InteractionZones" type="Node2D" parent="."]
+
+[node name="ComputerZone" type="Area2D" parent="InteractionZones"]
+
+[node name="ComputerCollision" type="CollisionShape2D" parent="InteractionZones/ComputerZone"]
+position = Vector2(1020, 380)
+shape = SubResource("RectangleShape2D_computer_zone")
+
+[node name="BedZone" type="Area2D" parent="InteractionZones"]
+
+[node name="BedCollision" type="CollisionShape2D" parent="InteractionZones/BedZone"]
+position = Vector2(220, 460)
+shape = SubResource("RectangleShape2D_interact")
+
+[node name="BookshelfZone" type="Area2D" parent="InteractionZones"]
+
+[node name="BookshelfCollision" type="CollisionShape2D" parent="InteractionZones/BookshelfZone"]
+position = Vector2(675, 200)
+shape = SubResource("RectangleShape2D_interact")
+
+[node name="WindowZone" type="Area2D" parent="InteractionZones"]
+
+[node name="WindowCollision" type="CollisionShape2D" parent="InteractionZones/WindowZone"]
+position = Vector2(250, 200)
+shape = SubResource("RectangleShape2D_interact")
+
+[node name="DoorZone" type="Area2D" parent="InteractionZones"]
+
+[node name="DoorCollision" type="CollisionShape2D" parent="InteractionZones/DoorZone"]
+position = Vector2(640, 600)
+shape = SubResource("RectangleShape2D_interact")
+
+[node name="TVZone" type="Area2D" parent="InteractionZones"]
+
+[node name="TVCollision" type="CollisionShape2D" parent="InteractionZones/TVZone"]
+position = Vector2(160, 560)
+shape = SubResource("RectangleShape2D_interact")
+
+[node name="HeadsetZone" type="Area2D" parent="InteractionZones"]
+
+[node name="HeadsetCollision" type="CollisionShape2D" parent="InteractionZones/HeadsetZone"]
+position = Vector2(940, 380)
+shape = SubResource("RectangleShape2D_interact")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(640, 450)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DayLabel" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "Day 1"
+
+[node name="InteractionPrompt" type="Label" parent="UI"]
+visible = false
+offset_left = 540.0
+offset_top = 600.0
+offset_right = 740.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 24
+text = "Press E to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueBox" type="Panel" parent="UI"]
+visible = false
+offset_left = 140.0
+offset_top = 500.0
+offset_right = 1140.0
+offset_bottom = 680.0
+
+[node name="DialogueText" type="Label" parent="UI/DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Dialogue text goes here..."
+autowrap_mode = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]

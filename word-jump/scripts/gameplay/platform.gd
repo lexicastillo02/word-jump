@@ -43,9 +43,9 @@ func _ready():
 	original_position = position
 	start_x = position.x
 
-	# Set up collision shape size
+	# Set up collision shape size (32px height prevents tunneling at high speeds)
 	if collision and collision.shape is RectangleShape2D:
-		collision.shape.size = Vector2(platform_width, 16)
+		collision.shape.size = Vector2(platform_width, 32)
 
 func _process(delta):
 	match platform_type:
@@ -58,9 +58,10 @@ func _process(delta):
 
 func process_shaky(delta):
 	if is_collapsing:
-		# Shake effect
+		# Shake effect - only horizontal to prevent player falling through
 		position.x = original_position.x + randf_range(-shake_intensity, shake_intensity)
-		position.y = original_position.y + randf_range(-shake_intensity, shake_intensity)
+		# Keep Y stable so player doesn't lose floor contact
+		position.y = original_position.y
 
 func process_timed(delta):
 	if is_collapsing:

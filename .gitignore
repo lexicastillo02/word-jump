@@ -4,3 +4,7 @@
 # Development documentation (local only)
 *.md
 !README.md
+!CLAUDE.md
+
+# Personal learning notes
+Learning/

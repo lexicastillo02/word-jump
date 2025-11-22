@@ -143,6 +143,12 @@ func advance_floor():
 
 func trigger_game_over():
 	current_state = GameState.GAME_OVER
+
+	# Store results for work hub / apartment feedback
+	GameSettings.last_score = score
+	GameSettings.last_floor = current_floor
+	GameSettings.work_completed_today = true
+
 	emit_signal("game_over")
 
 func get_difficulty_tier() -> int:
